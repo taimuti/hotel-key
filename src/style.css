@@ -50,6 +50,9 @@
 
     background-color: rgb(240, 240, 240);
 }
+.login__input__focus {
+    border: 2px solid rgb(40, 40, 145);
+  }  
 .login__input__field{
     flex-grow: 2;
 
