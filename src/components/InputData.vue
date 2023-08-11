@@ -6,9 +6,10 @@
             type="text"
             placeholder="Ваш логин"
             class="login__input__field"
+            id="login"
             name="login"/>
     </div>
-    <div class="login__input">
+    <div class="login__input" @input="outlineDraw">
         <input
             v-model="userData.password"
             type="password"

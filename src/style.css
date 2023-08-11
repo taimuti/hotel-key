@@ -4,12 +4,19 @@
   }
 
 .login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
     display: flex;
     flex-direction: column;
 
-    padding: 0 30px 25px;
     min-width: 25%;
     width: fit-content;
+
+    padding: 0 30px 25px;
+    
     border: 2px solid rgb(240, 240, 240);
     border-radius: 25px;
 
@@ -18,10 +25,11 @@
 
 .login__logo{
     text-align: center;
-    font-weight: 700;
-    font-size: 50px;
 
     color: rgb(148, 148, 148);
+
+    font-weight: 700;
+    font-size: 50px;
 }
 .login__logo__color{
     color: rgb(70, 70, 255);
@@ -35,16 +43,18 @@
 .login__input{
     display:flex;
     flex-direction:row;
-    
-    background-color: rgb(240, 240, 240);
-    border-radius: 30px;
 
     margin-bottom: 10px;
+
+    border-radius: 30px;
+
+    background-color: rgb(240, 240, 240);
 }
 .login__input__field{
     flex-grow: 2;
 
     padding: 20px;
+
     border-radius: 30px;
     border: none;
 
@@ -56,40 +66,43 @@
 .login__input__button{
     margin-right: 20px;
     margin-left: 10px;
+
     border-radius: 30px;
     border: none;
-}
-.login__input__icon{
-    height: auto;
-    width: 35px;
 }
 input:focus {
     outline: none;
   }  
 
 .login__chexkbox{
+    display: flex;
+    justify-content: space-between;
+
     margin-top: 20px;
     margin-bottom: 20px;
 
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.03em;
-
-    display: flex;
-    justify-content: space-between;
 }
 
-.login__button {
-    background-color: rgb(70, 70, 255);
-    color: white;
-    
+.login__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 
     border-radius: 30px;
     border: none;
 
+    background-color: rgb(70, 70, 255);
+    color: white;
+
     font-weight: 600;
     font-size: 20px;
+    font-family: inherit;
     letter-spacing: 0.03em;
-    font-family: 'Montserrat', sans-serif;
+}
+.login__submit__icon{
+    margin-right: 10px;
 }
