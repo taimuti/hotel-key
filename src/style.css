@@ -51,7 +51,8 @@
     background-color: rgb(240, 240, 240);
 }
 .login__input__focus {
-    border: 2px solid rgb(40, 40, 145);
+    outline: 2px solid rgb(45, 45, 160);
+    outline-offset: -2px;
   }  
 .login__input__field{
     flex-grow: 2;

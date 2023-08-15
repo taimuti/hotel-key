@@ -22,8 +22,8 @@
             placeholder="Ваш пароль"
             class="login__input__field"
             name="password"/>
-        <show-pass-button 
-            @showPassword="updateType"/>
+
+        <show-pass-button @showPassword="updateType"/>
     </div>
 </div>
 </template>
@@ -50,7 +50,6 @@ export default {
         },
 
         updateType(val) {
-            console.log(val)
             this.$refs.password.type = val;
         }
     },
