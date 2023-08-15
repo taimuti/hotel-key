@@ -1,27 +1,29 @@
 <template>
-<div @change="updateData"> 
+<div> 
     <div class="login__input" :class="{login__input__focus : isFocusedLogin}">   
         <input
+            @change="updateData"
             @focus="isFocusedLogin = true"
             @blur="isFocusedLogin = false"
             v-model="userData.login"
             type="text"
             placeholder="Ваш логин"
             class="login__input__field"
-            id="login"
             name="login"/>
     </div>
     <div class="login__input" :class="{login__input__focus : isFocusedPass}">
         <input
+            @change="updateData"
             @focus="isFocusedPass = true"
             @blur="isFocusedPass = false"
             v-model="userData.password"
+            ref="password"
             type="password"
             placeholder="Ваш пароль"
             class="login__input__field"
-            id="password"
             name="password"/>
-        <show-pass-button />
+        <show-pass-button 
+            @showPassword="updateType"/>
     </div>
 </div>
 </template>
@@ -37,7 +39,6 @@ export default {
     data() {
         return { 
             userData: {login: '', password: ''},
-            isShowed: false,
             isFocusedLogin: false,
             isFocusedPass: false,
         }
@@ -48,16 +49,9 @@ export default {
             this.$emit('passData', this.userData);
         },
 
-        focusLogin() {
-            this.isFocusedLogin = false;
-        },
-
-        outlineDivPass() {
-
-        },
-
-        outlineNone() {
-            document.getElementById("login-div").style = 'none'
+        updateType(val) {
+            console.log(val)
+            this.$refs.password.type = val;
         }
     },
 }
