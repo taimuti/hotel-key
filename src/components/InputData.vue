@@ -1,56 +1,35 @@
 <template>
 <div> 
-    <div class="login__input" :class="{login__input__focus : isFocusedLogin}">   
-        <input
-            @change="updateData"
-            @focus="isFocusedLogin = true"
-            @blur="isFocusedLogin = false"
-            v-model="userData.login"
-            type="text"
-            placeholder="Ваш логин"
-            class="login__input__field"
-            name="login"/>
-    </div>
-    <div class="login__input" :class="{login__input__focus : isFocusedPass}">
-        <input
-            @change="updateData"
-            @focus="isFocusedPass = true"
-            @blur="isFocusedPass = false"
-            v-model="userData.password"
-            ref="password"
-            type="password"
-            placeholder="Ваш пароль"
-            class="login__input__field"
-            name="password"/>
-
-        <show-pass-button @showPassword="updateType"/>
-    </div>
+    <input-login @passDataLogin="updateDataLogin" />
+    <input-pass @passDataPass="updateDataPass" />
 </div>
 </template>
 
 <script>
-import ShowPassButton from "./ShowPassButton.vue";
+import InputLogin from "./InputLogin.vue";
+import InputPass from "./InputPass.vue";
 
 export default {
     components: {
-        ShowPassButton
+        InputLogin,
+        InputPass
     },
 
     data() {
         return { 
             userData: {login: '', password: ''},
-            isFocusedLogin: false,
-            isFocusedPass: false,
         }
     },
 
     methods: {
-        updateData() {
+        updateDataLogin(data) {
+            this.userData.login = data;
             this.$emit('passData', this.userData);
         },
 
-        updateType(val) {
-            this.$refs.password.type = val;
+        updateDataPass(data) {
+            this.userData.password = data;
+            this.$emit('passData', this.userData);
         }
     },
 }

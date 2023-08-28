@@ -74,6 +74,11 @@
     border-radius: 30px;
     border: none;
 }
+.login__input__error{
+    color: red;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
 input:focus {
     outline: none;
   }  
