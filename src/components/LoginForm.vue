@@ -1,6 +1,6 @@
 <template>
     <form @submit="checkData" class="login__form">
-        <input-data @passData="updateData" />
+        <login-input @passLogin="updateLogin" @passPassword="updatePass"/>
 
         <div v-if="isErrorLogin" class="login__input__error">Введите логин.</div>
         <div v-if="isErrorPass" class="login__input__error">Введите пароль.</div>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import InputData from "./Input/InputData.vue";
+import LoginInput from "./Input/LoginInput.vue";
 import LoginCheckbox from "./LoginCheckbox.vue";
 import LoginButton from "./LoginButton.vue";
 
 export default {
     components: {
-        InputData,
+        LoginInput,
         LoginCheckbox,
         LoginButton,
     },
@@ -31,11 +31,12 @@ export default {
         };
     },
     methods: {
-        updateData(data) {
-            this.login = data.login;
-            this.password = data.password;
+        updateLogin(value) {
+            this.login = value;
         },
-
+        updatePass(value) {
+            this.password = value;
+        },
         updateFlagPass(value) {
             this.memorizePass = value;
         },
