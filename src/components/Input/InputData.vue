@@ -1,5 +1,6 @@
 <template>
-<div> 
+<div>
+    
     <input-login @passDataLogin="updateDataLogin" />
     <input-pass @passDataPass="updateDataPass" />
 </div>
