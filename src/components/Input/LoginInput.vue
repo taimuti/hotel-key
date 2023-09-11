@@ -1,17 +1,17 @@
 <template>
-<div>
-    <input-element 
-        v-model="login"
-        name="login"
-        autocomplete="username"
-        placeholder="Ваш логин" />
-    <input-element 
-        v-model="password"
-        type="password"
-        name="password"
-        autocomplete="current-password"
-        placeholder="Ваш пароль" />
-</div>
+    <div>
+        <input-element 
+            v-model="login"
+            name="login"
+            autocomplete="username"
+            placeholder="Ваш логин" />
+        <input-element 
+            type="password"
+            v-model="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Ваш пароль" />
+    </div>
 </template>
 
 <script>

@@ -13,6 +13,7 @@
             autocapitalize="none"
             tabindex="0"
             class="login__input__field">
+        
         <input-show-button v-if="type=='password'" @showPassword="updateType"/>
     </div>
 </template>
